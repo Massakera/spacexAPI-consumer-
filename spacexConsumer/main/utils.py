@@ -2,12 +2,12 @@ from collections import Counter
 from typing import Dict, List
 
 def most_frequent(List) -> int:
-    """function returning the most frequent element inside a list."""
+    """return the most frequent element inside a list."""
     occurence_count = Counter(List)
     return occurence_count.most_common(1)[0][0]
 
 def get_json_values(key,input_data) -> List:
-    """return the values of dicts inside a list"""
+    """return the values of dicts inside a list."""
     return [sub_val[key] for sub_val in input_data if key in sub_val]
 
 def max_dict_value(List,key) -> List:
