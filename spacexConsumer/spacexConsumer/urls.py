@@ -15,11 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from main.views import launches, launch_sites, launches_2019_2021
+from main.views import launches
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('launches/total', launches, name = "launches"),
-    path('launches/sites', launch_sites, name="launch_sites"),
-    path('launches/start=2019&end=2021', launches_2019_2021, name='launches_2019_2021')
+    path('launches/', launches, name = "launches"),
 ]

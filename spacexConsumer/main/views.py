@@ -1,30 +1,30 @@
-from posixpath import split
-from unittest import result
 from django.shortcuts import render
 import requests
 
 from .utils import most_frequent, get_json_values, get_max_dict
 
 def launches(request):
-    """request to retrieve the year that occurred most launches."""
-    response = requests.get('https://api.spacexdata.com/v3/launches?filter=launch_year')
-    launches = response.json()
+    """main request. Retrieve the year that had most launches"""
+    response_launches = requests.get('https://api.spacexdata.com/v3/launches?filter=launch_year')
+    launches = response_launches.json()
     launch_years = get_json_values('launch_year',launches)
-    result = most_frequent(launch_years)
-    return render(request, "main/launches.html", {"year_ocurred_most_launches": result})
+    result_launches = most_frequent(launch_years)
 
-def launch_sites(request):
-    """request to retrieve the launch_site where occurred most launches."""
-    response = requests.get('https://api.spacexdata.com/v3/launches?filter=launch_site')
-    launches = response.json()
-    launch_sites = get_json_values("launch_site", launches)
-    result = get_max_dict(launch_sites,'site_id')
-    return render(request,"main/launches.html", {"most_frequent_launch_site": result})
+    """retrieve the launch site most used for launches """
+    response_sites = requests.get('https://api.spacexdata.com/v3/launches?filter=launch_site')
+    sites = response_sites.json()
+    launch_sites = get_json_values("launch_site", sites)
+    result_sites = get_max_dict(launch_sites,'site_id')
 
-def launches_2019_2021(request):
-    "request to retrieve the launches between 2019 and 2021"
-    response = requests.get('https://api.spacexdata.com/v3/launches?start=2019&end=2021')
-    launches = response.json()
-    result = len(launches)
-    print(result)
-    return render(request,"main/launches.html", {"launches_quantity": result})
+    """retrieve the number of launches between 2019 and 2021"""
+    response_2019_2021 = requests.get('https://api.spacexdata.com/v3/launches?start=2019&end=2021')
+    launches_2019_2021 = response_2019_2021.json()
+    result_2019_2021 = len(launches_2019_2021)
+
+    data = {
+        "year_most_launches": str(result_launches),
+        "launch_sites":result_sites,
+        "launches_2019_2021":str(result_2019_2021)
+        }
+
+    return render(request,"main/launches.html", {"data":data})
