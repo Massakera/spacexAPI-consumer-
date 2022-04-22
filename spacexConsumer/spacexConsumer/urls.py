@@ -19,5 +19,5 @@ from main.views import launches
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('launches/', launches, name = "launches"),
+    path('', launches, name = "launches"),
 ]
