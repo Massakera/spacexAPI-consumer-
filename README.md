@@ -8,7 +8,7 @@ SpaceX API consumer é um client para extrair informações de lançamentos e re
 
 ## Inicialização 
 - 1 - Inicie uma venv    
-    - Navegue até a pasta que deseja clonar o repositorio e inicie um ambiente virtual
+    - Navegue até a pasta que deseja clonar o repositorio e inicie um ambiente virtual. Os comandos apresentados aqui devem ser executados no seu terminal.
     - ### Para o Windows:
     	- `py -m venv venv`
     - ### Para Linux e Mac:
