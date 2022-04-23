@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from xlsxwriter import Workbook
 import requests
-from django.core.cache import cache
 
 from .utils import most_frequent, get_json_values, get_max_dict
 
@@ -52,9 +51,9 @@ def export_csv(request):
     c = 0
 
     table_headers = [
-        'year_most_launches',
-        'launch_sites',
-        'launches_2019_2021'
+        'Year with most launches',
+        'Launch site with more launches',
+        'Number of launches between 2019 and 2021'
     ]
 
     for header in table_headers:
