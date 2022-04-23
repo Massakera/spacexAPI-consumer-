@@ -30,7 +30,7 @@ SpaceX API consumer é um client para extrair informações de lançamentos e re
 - 4 - rode as migrations e depois o servidor
     - `python3 manage.py migrate` ou `python manage.py migrate` no Windows
     - `python3 manage.py runserver` ou `python manage.py runserver` no Windows
-    - acesse `127.0.0.1:8000`. Para exportar a tabela em .xlsx basta clicar no botão de Download.
+    - acesse `127.0.0.1:8000` e espere a pagina carregar. Para exportar a tabela em .xlsx basta clicar no botão de Download.
 
 - Extra - testes unitários:
     - Para rodar os testes basta executar `python3 manage.py test` ou `python manage.py test` no Windows.
