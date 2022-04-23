@@ -1,5 +1,5 @@
 # spacexAPI-consumer
-SpaceX API consumer é um client para extrair informações de lançamentos e responder as seguintes 3 perguntas.
+SpaceX API consumer é um client para extrair informações de lançamentos e responder as seguintes perguntas.
 
 - Qual o ano onde houve mais lançamentos?
 - Qual o launch_site onde houve mais lançamentos?
